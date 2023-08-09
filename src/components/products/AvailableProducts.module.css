@@ -1,0 +1,23 @@
+.products {
+  max-width: 50rem;
+  width: 90%;
+  margin: 1.5rem auto;
+  animation: products-appear 1s ease-out forwards;
+}
+
+hr { 
+  border-top: 0.1rem dotted rgb(178, 178, 178) ;
+}
+
+.products ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes products-appear {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+}

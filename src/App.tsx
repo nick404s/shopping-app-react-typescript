@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import CartProvider from './store/CartProvider';
+import Header from './components/ui-elements/Header';
+import Products from './components/products/Products';
+import Cart from './components/cart/Cart';
 
 function App() {
+
+  const [isCartVisible, setIsCartVisible] = useState(false);
+
+  const showCartHandler = (): void => {
+    setIsCartVisible(true);
+  };
+
+  const hideCartHandler = (): void => {
+    setIsCartVisible(false);
+  };
+
+  const handleOrder = (): void => {
+    setIsCartVisible(false);
+    
+    console.log('Ordering...');
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartProvider>
+      {isCartVisible && <Cart onExit={hideCartHandler} onOrder={handleOrder} />}
+      <Header onShowCart={showCartHandler} />
+      <main>
+        <Products />
+      </main>
+    </CartProvider>
   );
 }
 
