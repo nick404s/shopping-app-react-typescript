@@ -2,17 +2,9 @@ import React, { useContext } from 'react';
 import classes from './Cart.module.css';
 import Modal from '../ui-elements/Modal';
 import CartContext from '../../store/CartContext';
-import { v4 as uuidv4 } from 'uuid';
 import CartItem from './CartItem';
+import { ProductType } from '../../ts-types/types';
 
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  quantity: number;
-}
 
 interface CartProps {
   onExit: () => void;
@@ -24,41 +16,41 @@ function Cart(props: CartProps): JSX.Element {
   const cartContext = useContext(CartContext);
 
   const totalSum: number = cartContext.items.reduce(
-    (sum: number, item: Product) => sum + (item.price * item.quantity), 0);
+    (sum: number, item: ProductType) => sum + (item.price * item.quantity), 0);
 
   const isEmptyCart: boolean = cartContext.items.length === 0;
 
-  const removeItemHandler = (id: number) => {
+  const handleRemoveItem = (id: number) => {
     cartContext.removeItem(id);
   };
 
-  const addItemHandler = (item: Product) => {
+  const handleAddItem = (item: ProductType) => {
     cartContext.addItem({...item, quantity: 1});
   };
 
-  const handleOrderbBtn = () => {
+  const handleOrderItems = () => {
     props.onOrder();
-    cartContext.clearCart();
+    cartContext.clearCart(); // clear cart after order
   };
 
-  const cartItems: JSX.Element = 
-                      <ul className={classes['cart-items']}>
-                          {cartContext.items.map(
-                              (item: Product) => <CartItem 
-                              key={uuidv4()}
-                              id={item.id}
-                              name={item.name}
-                              price={item.price}
-                              quantity={item.quantity}
-                              onRemove={removeItemHandler.bind(null, item.id)}
-                              onAdd={addItemHandler.bind(null, item)}
-                              />                     
-                          )}
-                      </ul>;
+  const renderedCartItems: JSX.Element[] = 
+                      cartContext.items.map(
+                          (item: ProductType) => <CartItem
+                          key={item.id}
+                          product={item}
+                          onRemove={handleRemoveItem.bind(null, item.id)}
+                          onAdd={handleAddItem.bind(null, item)}
+                          />
+                      );
+
+  const cartItemsList: JSX.Element = <ul className={classes['cart-items']}>
+                                        {renderedCartItems}
+                                      </ul>;
+
 
   return (
     <Modal onExit={props.onExit} >
-      {cartItems}
+      {cartItemsList}
       <div className={classes.total}>
         <span>Total Sum</span>
         <span>${totalSum.toFixed(2)}</span>
@@ -70,7 +62,7 @@ function Cart(props: CartProps): JSX.Element {
         >
           Exit
         </button>
-        {!isEmptyCart && <button onClick={handleOrderbBtn} className={classes.button}>Order</button>}
+        {!isEmptyCart && <button onClick={handleOrderItems} className={classes.button}>Order</button>}
       </div>
     </Modal>
   );

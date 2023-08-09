@@ -1,17 +1,24 @@
 import React from 'react';
 import classes from './CartItem.module.css';
+import { ProductType } from '../../ts-types/types';
 
 
 
-const CartItem = (props: any) => {
+type CartItemProps = {
+  product: ProductType;
+  onRemove: () => void;
+  onAdd: () => void;
+}
+
+const CartItem = (props: CartItemProps) => {
 
   return (
     <li className={classes['cart-item']}>
       <div>
-        <h2>{props.name}</h2>
+        <h2>{props.product.name}</h2>
         <div className={classes.summary}>
-          <span className={classes.price}>${props.price.toFixed(2)}</span>
-          <span className={classes.amount}>x {props.quantity}</span>
+          <span className={classes.price}>${props.product.price.toFixed(2)}</span>
+          <span className={classes.amount}>x {props.product.quantity}</span>
         </div>
       </div>
       <div className={classes.actions}>

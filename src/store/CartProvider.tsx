@@ -1,23 +1,9 @@
 import React, {useReducer, useMemo} from 'react';
 import CartContext from './CartContext';
+import { ProductType, CartContextType } from '../ts-types/types';
 
 interface CartProviderProps {
   children: React.ReactNode;
-}
-
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  quantity: number;
-}
-
-interface CartContextType {
-  items: Product[],
-  addItem: (item: Product) => void,
-  removeItem: (id: number) => void,
-  clearCart: () => void;
 }
 
 const defaultCartState: CartContextType = {
@@ -29,7 +15,7 @@ const defaultCartState: CartContextType = {
 
 interface CartAction {
   name: string;
-  item?: Product;
+  item?: ProductType;
   id?: number;
 }
 
@@ -44,16 +30,16 @@ const cartReducer = (state: CartContextType, action: CartAction): CartContextTyp
     if (itemIndex >= 0) {
 
       // get the existing item
-      const existingItem: Product = state.items[itemIndex];
+      const existingItem: ProductType = state.items[itemIndex];
 
       // create a new item with the updated quantity 
-      const updatedItem: Product = {
+      const updatedItem: ProductType = {
                         ...existingItem, 
                         quantity: existingItem.quantity + action.item!.quantity
       };
       
       // create a new array based on the existing items
-      const updatedItems: Product[] = [...state.items];
+      const updatedItems: ProductType[] = [...state.items];
 
       // replace the existing item with the new item
       updatedItems[itemIndex] = updatedItem;
@@ -70,22 +56,22 @@ const cartReducer = (state: CartContextType, action: CartAction): CartContextTyp
     const itemIndex: number = state.items.findIndex(item => item.id === action.id!);
 
     // get the item
-    const item: Product = state.items[itemIndex];
+    const item: ProductType = state.items[itemIndex];
 
     // if it's the last item, remove the item
     if (item.quantity === 1) {
 
-      const updatedItems: Product[] = state.items.filter(item => item.id !== action.id!);
+      const updatedItems: ProductType[] = state.items.filter(item => item.id !== action.id!);
 
       return {...state, items: updatedItems};
     }
     
     // if it's not the last item, update the item quantity
-    const updatedItem: Product = {
+    const updatedItem: ProductType = {
       ...item, 
       quantity: item.quantity - 1
     };
-    const updatedItems: Product[] = [...state.items];
+    const updatedItems: ProductType[] = [...state.items];
     updatedItems[itemIndex] = updatedItem;
     return {...state, items: updatedItems};
   }
@@ -102,7 +88,7 @@ function CartProvider({children}: CartProviderProps): JSX.Element {
 
   const [cartState, dispatch] = useReducer(cartReducer, defaultCartState);
 
-  const addItemHandler = (item: Product) => {
+  const addItemHandler = (item: ProductType) => {
     dispatch({name: 'ADD', item: item});
   };
 

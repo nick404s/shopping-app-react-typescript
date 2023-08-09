@@ -1,5 +1,5 @@
 
-interface Product {
+interface ProductType {
   id: number;
   name: string;
   description: string;
@@ -7,5 +7,12 @@ interface Product {
   quantity: number;
 }
 
+interface CartContextType {
+  items: ProductType[],
+  addItem: (item: any) => void,
+  removeItem: (id: number) => void,
+  clearCart: () => void;
+}
 
-export type { Product };
+
+export type { ProductType, CartContextType };

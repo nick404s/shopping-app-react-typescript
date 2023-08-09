@@ -2,17 +2,11 @@ import React, { useContext } from 'react';
 import classes from './ProductItem.module.css';
 import ProductItemForm from './ProductItemForm';
 import CartContext from '../../../store/CartContext';
+// import { v4 as uuidv4 } from 'uuid';
+import { ProductType } from '../../../ts-types/types';
+ 
 
-interface Product {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  quantity: number;
-}
-
-
-function ProductItem(props: Product): JSX.Element {
+function ProductItem(props: ProductType): JSX.Element {
 
   const cartContext = useContext(CartContext);
 
@@ -27,7 +21,7 @@ function ProductItem(props: Product): JSX.Element {
   };
 
   return (
-    <li className={classes.item}>
+    <li className={classes.item} key={props.id}>
       <div>
         <h3>{props.name}</h3>
         <div className={classes.description}>{props.description}</div>
