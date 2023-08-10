@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import classes from './Cart.module.css';
 import Modal from '../ui-elements/Modal';
 import CartContext from '../../store/CartContext';
@@ -15,6 +15,8 @@ function Cart(props: CartProps): JSX.Element {
 
   const cartContext = useContext(CartContext);
 
+  const [isOrdered, setIsOrdered] = useState<boolean>(false);
+
   const totalSum: number = cartContext.items.reduce(
     (sum: number, item: ProductType) => sum + (item.price * item.quantity), 0);
 
@@ -29,6 +31,13 @@ function Cart(props: CartProps): JSX.Element {
   };
 
   const handleOrderItems = () => {
+    setIsOrdered(true);
+ 
+    // set timeout to clear cart after order
+    setTimeout(() => {
+      setIsOrdered(false);
+    }
+    , 3000);
     props.onOrder();
     cartContext.clearCart(); // clear cart after order
   };
@@ -47,14 +56,23 @@ function Cart(props: CartProps): JSX.Element {
                                         {renderedCartItems}
                                       </ul>;
 
+  const totalSumInfo: JSX.Element = <div className={classes.total}>
+                                        <span>Total Sum</span>
+                                        <span>${totalSum.toFixed(2)}</span>
+                                      </div>;
+
+  const thanksPhrase: JSX.Element = <div className={classes.total}>
+                                        <span>Thanks for your order!</span>
+                                      </div>;
+                                      
+  const summary: JSX.Element = isOrdered ? thanksPhrase : totalSumInfo;
+
+
 
   return (
     <Modal onExit={props.onExit} >
       {cartItemsList}
-      <div className={classes.total}>
-        <span>Total Sum</span>
-        <span>${totalSum.toFixed(2)}</span>
-      </div>
+      {summary}
       <div className={classes.actions}>
         <button 
           className={classes['button--alt']}

@@ -8,23 +8,23 @@ import { ProductType } from '../../ts-types/types';
 const products: ProductType[] = [
   {
     id: 1,
-    name: 'Product 1',
-    description: 'Description 1',
-    price: 100,
+    name: 'Apples',
+    description: 'The best apples in town',
+    price: 3.50,
     quantity: 0
   },
   {
     id: 2,
-    name: 'Product 2',
-    description: 'Description 2',
-    price: 200,
+    name: 'Oranges',
+    description: 'The best oranges in town',
+    price: 2.00,
     quantity: 0
   },
   {
     id: 3,
-    name: 'Product 3',
-    description: 'Description 3',
-    price: 300,
+    name: 'Grapes',
+    description: 'The best grapes in town',
+    price: 5.75,
     quantity: 0
   }
 ];
@@ -42,7 +42,6 @@ function AvailableProducts(): JSX.Element {
         price={product.price}
         quantity={product.quantity} 
       />
-      <hr />
      </>
   ));
 

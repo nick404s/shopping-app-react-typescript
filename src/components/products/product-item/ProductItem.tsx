@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import classes from './ProductItem.module.css';
 import ProductItemForm from './ProductItemForm';
 import CartContext from '../../../store/CartContext';
-// import { v4 as uuidv4 } from 'uuid';
 import { ProductType } from '../../../ts-types/types';
  
 
@@ -30,6 +29,7 @@ function ProductItem(props: ProductType): JSX.Element {
       <div>
         <ProductItemForm id={props.id} onAddToCart={addToCartHandler} />
       </div>
+      <hr />
     </li>
   );
 } 

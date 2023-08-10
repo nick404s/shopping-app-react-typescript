@@ -7,10 +7,10 @@ function Info() {
     <section className={classes.info}>
       <h2>We have the best quality products for you!</h2>
       <p>
-        Only fresh products from our farm.   
+        Only fresh fruits and vegetables   
       </p>
       <p>
-        No artificials or artificially created products. 
+        Growing organically since 1986
       </p>
     </section>
   );

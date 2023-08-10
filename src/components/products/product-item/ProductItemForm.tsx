@@ -2,17 +2,23 @@ import React, {useRef, useState} from "react";
 import classes from "./ProductItemForm.module.css";
 import Input from "../../ui-elements/Input";
 
+interface ProductItemFormProps {
+  id: number;
+  onAddToCart: (quantity: number) => void;
+};
 
-function ProductItemForm(props: any) {
+
+function ProductItemForm(props: ProductItemFormProps) {
 
   const quantityInputRef = useRef<HTMLInputElement>(null);
-  const [isFormValid, setIsFormValid] = useState(false);
+  const [isFormValid, setIsFormValid] = useState<boolean>(true);
 
   const onSubmitHandler = (event: React.FormEvent): void => {
     event.preventDefault();
 
     const enteredQuantity = quantityInputRef.current!.value;
     const enteredQuantityNumber: number = enteredQuantity ? +enteredQuantity : 0;
+
     if (!enteredQuantity.trim() || enteredQuantityNumber < 1 || enteredQuantityNumber > 10) {
       setIsFormValid(false);
       return;
