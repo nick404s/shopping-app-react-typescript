@@ -8,9 +8,11 @@ import { ProductType } from '../../ts-types/types';
 
 interface CartProps {
   onExit: () => void;
-  onOrder: () => void;
 }
 
+/** 
+ * Represents the cart component.
+*/
 function Cart(props: CartProps): JSX.Element {
 
   const cartContext = useContext(CartContext);
@@ -30,15 +32,8 @@ function Cart(props: CartProps): JSX.Element {
     cartContext.addItem({...item, quantity: 1});
   };
 
-  const handleOrderItems = () => {
-    setIsOrdered(true);
- 
-    // set timeout to clear cart after order
-    setTimeout(() => {
-      setIsOrdered(false);
-    }
-    , 3000);
-    props.onOrder();
+  const handlePlaceOrder = () => {
+    setIsOrdered(true); // set flag to show thank you message
     cartContext.clearCart(); // clear cart after order
   };
 
@@ -62,9 +57,10 @@ function Cart(props: CartProps): JSX.Element {
                                       </div>;
 
   const thanksPhrase: JSX.Element = <div className={classes.total}>
-                                        <span>Thanks for your order!</span>
+                                        <span>Thanks for shopping with us!</span>
                                       </div>;
-                                      
+   
+   // show in the summary thank you message if cart is ordered, or total sum info otherwise
   const summary: JSX.Element = isOrdered ? thanksPhrase : totalSumInfo;
 
 
@@ -80,7 +76,7 @@ function Cart(props: CartProps): JSX.Element {
         >
           Exit
         </button>
-        {!isEmptyCart && <button onClick={handleOrderItems} className={classes.button}>Order</button>}
+        {!isEmptyCart && <button onClick={handlePlaceOrder} className={classes.button}>Place Order</button>}
       </div>
     </Modal>
   );

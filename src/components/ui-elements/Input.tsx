@@ -6,7 +6,9 @@ interface InputProps {
   input: any;
 }
 
-
+/** 
+ * Represents the input ui component.
+*/
 const Input = React.forwardRef((props: InputProps, ref: any): JSX.Element => {
   return (
     <div className={classes.input}>

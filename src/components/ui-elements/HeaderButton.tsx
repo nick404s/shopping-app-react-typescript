@@ -7,6 +7,9 @@ interface HeaderButtonProps {
   onClick: () => void;
 }
 
+/** 
+ * Represents the header button ui component.
+*/
 function HeaderButton(props: HeaderButtonProps): JSX.Element {
 
   const cartContext = useContext(CartContext);
@@ -47,7 +50,7 @@ function HeaderButton(props: HeaderButtonProps): JSX.Element {
     <>
       <button className={btnClasses} onClick={props.onClick}> 
         <AiOutlineShoppingCart />
-        <span className={classes.text}>Orders</span>
+        <span className={classes.text}>Cart</span>
         <span className={classes.quantity}>{numberOfItems}</span>
       </button>
     </>

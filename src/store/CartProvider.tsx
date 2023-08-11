@@ -83,7 +83,9 @@ const cartReducer = (state: CartContextType, action: CartAction): CartContextTyp
 };
 
 
-// the CartProvider component.
+/**
+ * Represents the CartProvider component.
+ */
 function CartProvider({children}: CartProviderProps): JSX.Element {
 
   const [cartState, dispatch] = useReducer(cartReducer, defaultCartState);

@@ -7,6 +7,9 @@ interface HeaderProps {
   onShowCart: () => void;
 }
 
+/** 
+ * Represents the header ui component.
+*/
 function Header(props: HeaderProps): JSX.Element {
   return (
     <>

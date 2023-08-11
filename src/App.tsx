@@ -17,15 +17,9 @@ function App() {
     setIsCartVisible(false);
   };
 
-  const handleOrder = (): void => {
-    setIsCartVisible(false);
-    
-    console.log('Ordering...');
-  };
-
   return (
     <CartProvider>
-      {isCartVisible && <Cart onExit={hideCartHandler} onOrder={handleOrder} />}
+      {isCartVisible && <Cart onExit={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
       <main>
         <Products />

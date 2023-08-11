@@ -10,6 +10,9 @@ type CartItemProps = {
   onAdd: () => void;
 }
 
+/** 
+ * Represents the cart item component.
+*/
 const CartItem = (props: CartItemProps) => {
 
   return (

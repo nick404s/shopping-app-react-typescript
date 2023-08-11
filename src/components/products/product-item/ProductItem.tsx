@@ -4,7 +4,9 @@ import ProductItemForm from './ProductItemForm';
 import CartContext from '../../../store/CartContext';
 import { ProductType } from '../../../ts-types/types';
  
-
+/** 
+ * Represents the product item component.
+*/
 function ProductItem(props: ProductType): JSX.Element {
 
   const cartContext = useContext(CartContext);

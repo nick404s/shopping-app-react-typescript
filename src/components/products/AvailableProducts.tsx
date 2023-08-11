@@ -29,7 +29,9 @@ const products: ProductType[] = [
   }
 ];
 
-
+/** 
+ * Represents the products available for purchase component.
+*/
 function AvailableProducts(): JSX.Element {
 
   const renderedProducts: JSX.Element[] = products.map(product => (

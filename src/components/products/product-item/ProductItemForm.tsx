@@ -7,7 +7,9 @@ interface ProductItemFormProps {
   onAddToCart: (quantity: number) => void;
 };
 
-
+/** 
+ * Represents the product item form component.
+*/
 function ProductItemForm(props: ProductItemFormProps) {
 
   const quantityInputRef = useRef<HTMLInputElement>(null);
