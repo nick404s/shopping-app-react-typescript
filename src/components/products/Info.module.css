@@ -8,6 +8,8 @@
   margin-top: -10rem;
   margin-bottom: 10rem;
   color: aliceblue;
+  background-color: var(--transparent_grey_base);
+  box-shadow: 0 0.5rem 1.8rem 1rem rgba(12, 12, 12, 0.25);
   padding: 0.75rem;
 }
 

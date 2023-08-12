@@ -25,7 +25,7 @@
   font: inherit;
   cursor: pointer;
   background-color: transparent;
-  border: 0.1rem solid var(--purple);
+  border: 0.1rem solid var(--base);
   padding: 0.5rem 2rem;
   border-radius: 2.5rem;
   margin-left: 1rem;
@@ -33,16 +33,18 @@
 
 .actions button:hover,
 .actions button:active {
-  background-color: var(--dark_purple);
-  border-color: var(--dark_purple);
+  background-color: var(--dark_base);
+  border-color: var(--dark_base);
   color: aliceblue;
 }
 
 .actions .button--alt {
-  color: var(--purple);
+  color: var(--dark_base);
+  font-weight: 500;
 }
 
 .actions .button {
-  background-color: var(--purple);
+  background-color: var(--base);
   color: aliceblue;
+  font-weight: 500;
 }

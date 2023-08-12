@@ -17,7 +17,7 @@
 
 .price {
   font-weight: bold;
-  color: #5a0d98;
+  color: var(--dark_base);
   font-size: 1.25rem;
   margin-top: 0.25rem;
 }

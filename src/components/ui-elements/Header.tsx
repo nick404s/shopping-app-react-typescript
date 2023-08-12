@@ -3,6 +3,11 @@ import React from 'react';
 import classes from './Header.module.css';
 import HeaderButton from './HeaderButton';
 
+// import FruitsImage from '../public/fruits_pic.jpg';
+
+// how to find a path to the image in my project?
+
+
 interface HeaderProps {
   onShowCart: () => void;
 }
@@ -11,6 +16,8 @@ interface HeaderProps {
  * Represents the header ui component.
 */
 function Header(props: HeaderProps): JSX.Element {
+
+
   return (
     <>
       <header className={classes.header}>
@@ -21,8 +28,8 @@ function Header(props: HeaderProps): JSX.Element {
       </header>
       <div className={classes['main-image']}>
         <img 
-        src='https://images.unsplash.com/photo-1516594798947-e65505dbb29d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80' 
-        alt='groceries'
+        src='https://cdn.pixabay.com/photo/2018/09/10/18/12/colorful-3667662_1280.jpg' 
+        alt='products'
         />
       </div>
     </>

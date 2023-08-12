@@ -7,20 +7,20 @@ import Cart from './components/cart/Cart';
 
 function App() {
 
-  const [isCartVisible, setIsCartVisible] = useState(false);
+  const [isCartVisible, setIsCartVisible] = useState<boolean>(false);
 
-  const showCartHandler = (): void => {
+  const handleShowCart = (): void => {
     setIsCartVisible(true);
   };
 
-  const hideCartHandler = (): void => {
+  const handleHideCart = (): void => {
     setIsCartVisible(false);
   };
 
   return (
     <CartProvider>
-      {isCartVisible && <Cart onExit={hideCartHandler} />}
-      <Header onShowCart={showCartHandler} />
+      {isCartVisible && <Cart onExit={handleHideCart} />}
+      <Header onShowCart={handleShowCart} />
       <main>
         <Products />
       </main>

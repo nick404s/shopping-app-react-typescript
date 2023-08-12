@@ -6,17 +6,17 @@
 
 .form button {
   cursor: pointer;
-  background-color: var(--purple);
+  background-color: var(--base);
   color: aliceblue;
   font: inherit;
   font-weight: 500;
-  border: 0.1rem solid var(--purple);
+  border: 0.1rem solid var(--base);
   border-radius: 1rem;
   padding: 0.35rem 2.75rem;
 }
 
 .form button:hover,
 .form button:active {
-  background-color: var(--dark_purple);
-  border-color: var(--dark_purple);
+  background-color: var(--dark_base);
+  border-color: var(--dark_base);
 }

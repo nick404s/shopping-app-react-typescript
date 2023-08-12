@@ -1,9 +1,10 @@
 * { box-sizing: border-box;}
 
 :root {
-  --purple: rgb(144, 44, 238);
-  --grey_purple: rgb(65, 58, 65);
-  --dark_purple: rgb(70, 12, 125);
+  --base: rgb(34, 166, 29);
+  --grey_base: rgb(86, 87, 86);
+  --transparent_grey_base: rgba(86, 87, 86, 0.75);
+  --dark_base: rgb(9, 86, 63);
 }
 
 body {
@@ -13,7 +14,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--grey_purple);
+  background-color: var(--grey_base);
 }
 
 code {
