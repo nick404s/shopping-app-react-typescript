@@ -26,7 +26,28 @@ const products: ProductType[] = [
     description: 'The best grapes in town',
     price: 5.75,
     quantity: 0
-  }
+  },
+  {
+    id: 4,
+    name: 'Kiwis',
+    description: 'The best kiwis in town',
+    price: 4.50,
+    quantity: 0
+    },
+    {
+      id: 5,
+      name: 'Pears',
+      description: 'The best pears in town',
+      price: 2.25,
+      quantity: 0
+    },
+    {
+      id: 6,
+      name: 'Pomegranates',
+      description: 'The best pomegranates in town',
+      price: 3.00,
+      quantity: 0
+    }
 ];
 
 /** 

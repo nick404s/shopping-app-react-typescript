@@ -1,11 +1,7 @@
 import React from 'react';
-
 import classes from './Header.module.css';
 import HeaderButton from './HeaderButton';
-
-// import FruitsImage from '../public/fruits_pic.jpg';
-
-// how to find a path to the image in my project?
+import HeaderImage from '../../images/header_fruits.jpg';
 
 
 interface HeaderProps {
@@ -21,14 +17,14 @@ function Header(props: HeaderProps): JSX.Element {
   return (
     <>
       <header className={classes.header}>
-        <h1>Make Order</h1>
+        <h1>Fruit Market</h1>
         <HeaderButton 
           onClick={props.onShowCart}
          />
       </header>
       <div className={classes['main-image']}>
         <img 
-        src='https://cdn.pixabay.com/photo/2018/09/10/18/12/colorful-3667662_1280.jpg' 
+        src={HeaderImage}
         alt='products'
         />
       </div>

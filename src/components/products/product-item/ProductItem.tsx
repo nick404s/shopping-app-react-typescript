@@ -11,7 +11,7 @@ function ProductItem(props: ProductType): JSX.Element {
 
   const cartContext = useContext(CartContext);
 
-  const addToCartHandler = (quantity: number) => {
+  const handleAddToCart = (quantity: number) => {
 
     cartContext.addItem({
       id: props.id,
@@ -26,10 +26,10 @@ function ProductItem(props: ProductType): JSX.Element {
       <div>
         <h3>{props.name}</h3>
         <div className={classes.description}>{props.description}</div>
-        <div className={classes.price}>{`$${props.price.toFixed(2)}`}</div>
+        <div className={classes.price}>${props.price.toFixed(2)}/lb</div>
       </div>
       <div>
-        <ProductItemForm id={props.id} onAddToCart={addToCartHandler} />
+        <ProductItemForm id={props.id} onAddToCart={handleAddToCart} />
       </div>
       <hr />
     </li>

@@ -2,12 +2,15 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 0.5rem;
-  border-bottom: 0.1rem solid grey;
   margin: 0.8rem;
 }
 
 .product h3 {
   margin: 0 0 0.25rem 0;
+}
+
+.item hr {
+  border-top: 0.1rem dotted var(--grey_base);
 }
 
 .description {

@@ -2,14 +2,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 0.1rem solid #c0bebe;
+  border-bottom: 0.1rem dotted var(--grey_base);
   padding: 1rem 0;
   margin: 1rem 0;
 }
 
 .cart-item h2 {
   margin: 0 0 0.75rem 0;
-  color: #323232;
 }
 
 .summary {
@@ -26,7 +25,6 @@
 
 .amount {
   font-weight: 800;
-  color: #363636;
 }
 
 .actions {

@@ -4,9 +4,7 @@
   max-width: 40rem;
   width: 100%;
   margin:auto;
-  border-radius: 1rem;
-  margin-top: -10rem;
-  margin-bottom: 10rem;
+  margin: -12rem auto 10rem auto;
   color: aliceblue;
   background-color: var(--transparent_grey_base);
   box-shadow: 0 0.5rem 1.8rem 1rem rgba(12, 12, 12, 0.25);
@@ -16,4 +14,9 @@
 .info h2 {
   font-size: 1.8rem;
   margin-top: 0;
+}
+
+.info p {
+  font-style: italic;
+  font-size: 1.25rem;
 }
