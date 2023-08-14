@@ -1,17 +1,22 @@
 .products {
   max-width: 50rem;
-  width: 90%;
+  /* width: 90%; */
   margin: 1.5rem auto;
   animation: show-products 1s ease-out forwards;
 }
 
 .products ul {
   max-height: 35rem;
-  height: 50%;
   overflow-y: scroll;
   list-style: none;
   margin: 0;
   padding: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .products ul {
+    max-height: 25rem;
+  }
 }
 
 @keyframes show-products {
@@ -20,3 +25,5 @@
     transform: translateY(3rem);
   }
 }
+
+
