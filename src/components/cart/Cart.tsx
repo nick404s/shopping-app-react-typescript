@@ -56,7 +56,7 @@ function Cart(props: CartProps): JSX.Element {
                                         <span>${totalSum.toFixed(2)}</span>
                                       </div>;
 
-  const thanksPhrase: JSX.Element = <div className={classes.total}>
+  const thanksPhrase: JSX.Element = <div className={classes.thanks}>
                                         <span>Thanks for shopping with us!</span>
                                       </div>;
    
