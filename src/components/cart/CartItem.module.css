@@ -56,11 +56,11 @@
   color: var(--dark_base);
   background-color: transparent;
   cursor: pointer;
+  border-radius: 50%;
 }
 
 .cart-item-icon:hover,
 .cart-item-icon:active {
   background-color: var(--base);
   color: aliceblue;
-  border-radius: 50%;
 }
