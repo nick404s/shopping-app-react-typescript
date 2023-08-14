@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/shopping-app-react-typescript/static/css/main.1001a079.css",
+    "main.css": "/shopping-app-react-typescript/static/css/main.f261aff1.css",
     "main.js": "/shopping-app-react-typescript/static/js/main.c5d964d8.js",
     "static/media/header_fruits.jpg": "/shopping-app-react-typescript/static/media/header_fruits.7beacf90761e778a0f5f.jpg",
     "index.html": "/shopping-app-react-typescript/index.html",
-    "main.1001a079.css.map": "/shopping-app-react-typescript/static/css/main.1001a079.css.map",
+    "main.f261aff1.css.map": "/shopping-app-react-typescript/static/css/main.f261aff1.css.map",
     "main.c5d964d8.js.map": "/shopping-app-react-typescript/static/js/main.c5d964d8.js.map"
   },
   "entrypoints": [
-    "static/css/main.1001a079.css",
+    "static/css/main.f261aff1.css",
     "static/js/main.c5d964d8.js"
   ]
 }
