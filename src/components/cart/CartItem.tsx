@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './CartItem.module.css';
 import { ProductType } from '../../ts-types/types';
+import { GoPlusCircle, GoNoEntry } from "react-icons/go";
 
 
 
@@ -25,8 +26,12 @@ const CartItem = (props: CartItemProps) => {
         </div>
       </div>
       <div className={classes.actions}>
-        <button onClick={props.onRemove}>−</button>
-        <button onClick={props.onAdd}>+</button>
+        <button onClick={props.onRemove}>
+          <GoNoEntry className={classes['cart-item-icon']} />
+        </button>
+        <button onClick={props.onAdd}>
+          <GoPlusCircle className={classes['cart-item-icon']} />
+        </button>
       </div>
     </li>
   );

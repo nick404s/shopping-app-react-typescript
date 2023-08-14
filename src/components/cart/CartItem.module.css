@@ -29,32 +29,38 @@
 
 .actions {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
+  justify-content: space-between;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .actions {
     flex-direction: row;
   }
-}
+} */
 
 .cart-item button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font: inherit;
-  font-weight: bold;
-  font-size: 1.25rem;
-  color: var(--dark_base);
-  border: 0.1rem solid var(--base);
-  width: 3rem;
-  text-align: center;
-  border-radius: 0.5rem;
   background-color: transparent;
   cursor: pointer;
   margin-left: 1rem;
   margin-bottom: -2.25rem;
+  border: none;
 }
 
-.cart-item button:hover,
-.cart-item button:active {
+.cart-item-icon{
+  font-size: 2.5rem;
+  color: var(--dark_base);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.cart-item-icon:hover,
+.cart-item-icon:active {
   background-color: var(--base);
   color: aliceblue;
+  border-radius: 50%;
 }
