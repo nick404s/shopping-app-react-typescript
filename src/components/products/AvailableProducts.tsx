@@ -43,7 +43,7 @@ const products: ProductType[] = [
   {
     id: 6,
     name: "Bananas",
-    description: "The best Bananas in town",
+    description: "The best bananas in town",
     price: 3.0,
     quantity: 0,
   },
